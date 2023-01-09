@@ -7,7 +7,6 @@ import * as subs from "@aws-cdk/aws-sns-subscriptions";
 import * as logs from "@aws-cdk/aws-logs";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as dynamodb from "@aws-cdk/aws-dynamodb";
-import * as iam from "@aws-cdk/aws-iam";
 import {
   Effect,
   PolicyDocument,
