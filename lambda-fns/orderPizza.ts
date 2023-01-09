@@ -1,11 +1,12 @@
-exports.handler = async function(flavour:any) {
-    console.log("Requested Pizza :", JSON.stringify(flavour, undefined, 2));
-    
-    let containsPineapple = false;
-    
-    if(flavour == 'pineapple' || flavour =='hawaiian'){
-        containsPineapple = true;
-    }
+import { Handler } from "aws-lambda";
 
-    return {'containsPineapple': containsPineapple}
-}
+export const handler: Handler<string, { containsPineapple: boolean }> =
+  async function (flavour) {
+    console.log("Requested Pizza :", JSON.stringify(flavour, undefined, 2));
+
+    flavour = flavour.toLowerCase();
+
+    return {
+      containsPineapple: flavour === "pineapple" || flavour === "hawaiian",
+    };
+  };
