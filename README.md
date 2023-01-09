@@ -9,3 +9,7 @@ install the aws cli utility and configure credentials
 `$ npm run build`
 
 `$ npm run deploy`
+
+running tests:
+
+`$ npm run test`
